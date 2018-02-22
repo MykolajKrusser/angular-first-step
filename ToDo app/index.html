@@ -8,28 +8,23 @@
     <script src="app.js"></script>
   </head>
   <body>
-  <h1>ToDo App</h1>
-  <div ng-controller="ToDoCtrl as ctrl">
-    <div>
-      <div>Add ToDo</div>
-      <label>
-        <input ng-model="ctrl.newToDo" type="text">
-      </label>
-      <button ng-click="ctrl.addNewToDo()">Add</button>
-    </div>
-    <div>
-      <p>Your Todos:</p>
-      <button ng-click="ctrl.triggerEditMode()" ng-hide="ctrl.editMode">Edit</button>
-      <button ng-click="ctrl.triggerEditMode()" ng-show="ctrl.editMode">Done</button>
-      <ol>
-        <li ng-repeat="todo in ctrl.todos track by $index">
-          <span ng-bind="todo" ng-hide="ctrl.editMode" ng-click="ctrl.checkedToDo()"></span>
-          <input ng-model="todo" ng-show="ctrl.editMode" type="text">
-          <button ng-hide="ctrl.editMode" ng-click="ctrl.deleteToDo($index)">x</button>
-        </li>
-      </ol>
-    </div>
-  </div>
-
+      <section id="main">
+          <div ng-controller="ToDoCtrl as ctrl" class="content-wr flex">
+              <h1>ToDo App</h1>
+              <div>Add ToDo</div>
+              <input ng-model="ctrl.newToDo" type="text" id="myInput">
+              <button ng-click="ctrl.addNewToDo()" class="addBtn">Add</button>
+              <p>Your Todos:</p>
+              <button ng-click="ctrl.triggerEditMode()" ng-hide="ctrl.editMode" class="addBtn">Edit</button>
+              <button ng-click="ctrl.triggerEditMode()" ng-show="ctrl.editMode" class="addBtn">Done</button>
+              <ol>
+                  <li ng-repeat="todo in ctrl.todos track by $index">
+                      <span ng-bind="todo" ng-hide="ctrl.editMode"></span>
+                      <input ng-model="todo" ng-show="ctrl.editMode" type="text">
+                      <button ng-hide="ctrl.editMode" ng-click="ctrl.deleteToDo($index)" class="addBtn">x</button>
+                  </li>
+              </ol>
+          </div>
+      </section>
   </body>
 </html>
