@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="toDoApp">
+<html lang="en" ng-app="toDoApp"><!--define app name -->
   <head>
     <meta charset="utf-8">
     <title>ToDo app in AngularJS</title>
@@ -9,19 +9,19 @@
   </head>
   <body>
       <section id="main">
-          <div ng-controller="ToDoCtrl as ctrl" class="content-wr flex">
+          <div ng-controller="ToDoCtrl as ctrl" class="content-wr flex"><!--define controller as ctrl name, controller described in js file -->
               <h1>ToDo App</h1>
               <div>Add ToDo</div>
-              <input ng-model="ctrl.newToDo" type="text" id="myInput">
-              <button ng-click="ctrl.addNewToDo()" class="addBtn">Add</button>
+              <input ng-model="ctrl.newToDo" type="text" id="myInput"> <!-- make a model from input -->
+              <button ng-click="ctrl.addNewToDo()" class="Btn">Add</button><!-- by click invoke function from controller -->
               <p>Your Todos:</p>
-              <button ng-click="ctrl.triggerEditMode()" ng-hide="ctrl.editMode" class="addBtn">Edit</button>
-              <button ng-click="ctrl.triggerEditMode()" ng-show="ctrl.editMode" class="addBtn">Done</button>
+              <button ng-click="ctrl.triggerEditMode()" ng-hide="ctrl.editMode" class="Btn">Edit</button> <!--invoke Edit mode and change visibility of buttons -->
+              <button ng-click="ctrl.triggerEditMode()" ng-show="ctrl.editMode" class="Btn">Done</button>
               <ol>
-                  <li ng-repeat="todo in ctrl.todos track by $index">
+                  <li ng-repeat="todo in ctrl.todos track by $index"> <!--create todo li elements from array -->
                       <span ng-bind="todo" ng-hide="ctrl.editMode"></span>
-                      <input ng-model="todo" ng-show="ctrl.editMode" type="text">
-                      <button ng-hide="ctrl.editMode" ng-click="ctrl.deleteToDo($index)" class="addBtn">x</button>
+                      <input ng-model="todo" ng-show="ctrl.editMode" type="text"> <!--through invoked editeMode change todo model -->
+                      <button ng-hide="ctrl.editMode" ng-click="ctrl.deleteToDo($index)" class="Btn">x</button> <!-- delete li element from array -->
                   </li>
               </ol>
           </div>

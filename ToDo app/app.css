@@ -51,7 +51,7 @@ section {
   padding-left: 10px;
   font-family: Verdana, sans-serif;
 }
-.addBtn{
+.Btn{
   cursor: pointer;
   margin-top: 5px;
   box-sizing: border-box;
@@ -60,7 +60,7 @@ section {
   padding: 5px;
   transition: 0.5s;
 }
-.addBtn:hover{
+.Btn:hover{
   font-size: 22px;
 }
 ol {
